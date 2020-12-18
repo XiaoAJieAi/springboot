@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.n22.springboot.model.Student;
 import com.n22.springboot.service.db.StudentServiceDB;
 
 @Controller
@@ -20,13 +21,13 @@ public class StudentController {
 	
 	@RequestMapping(value = "/getAllStudentsByMaybatisDB1",method = RequestMethod.GET)
 	@ResponseBody
-	public List<Map<String,Object>> getAllStudentsByMaybatisDB1(){
+	public List<Student> getAllStudentsByMaybatisDB1(){
 		return studentServiceDB.getAllStudentsByMaybatisDB1();
 	}
 	
 	@RequestMapping(value = "/getAllStudentsByMaybatisDB2",method = RequestMethod.GET)
 	@ResponseBody
-	public List<Map<String,Object>> getAllStudentsByMaybatisDB2(){
+	public List<Student> getAllStudentsByMaybatisDB2(){
 		return studentServiceDB.getAllStudentsByMaybatisDB2();
 	}
 }

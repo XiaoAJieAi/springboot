@@ -66,8 +66,32 @@
 	        <artifactId>spring-boot-starter-thymeleaf</artifactId>
       	</dependency>
       	
+      	<!-- junit依赖 -->
+      	 <dependency>
+	        <groupId>junit</groupId>
+	        <artifactId>junit</artifactId>
+    	</dependency>
+    	
+    	<!-- spring-boot-starter-cache依赖 -->
+    	<dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-cache</artifactId>
+      	</dependency>
+      	
+      	<!-- springboot redis -->
+      	<dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-data-redis</artifactId>
+      	</dependency>
+      	
+      	<!-- ehcache依赖 -->
+      	<dependency>
+	        <groupId>net.sf.ehcache</groupId>
+	        <artifactId>ehcache</artifactId>
+      	</dependency>
+    	
 	</dependencies>
-
+	
 	<build>
 		<plugins>
 			<plugin>
