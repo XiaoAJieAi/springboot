@@ -1,7 +1,19 @@
 server:
   servlet:
     context-path: /web
-    
+
+management:
+  # 监控端口
+  server:
+    port: 80
+  endpoints:    web:
+      # 定制根路径
+      base-path: /actuator
+      # 开放所有节点，默认只开启了health info节点
+      exposure:
+        include: "*"  endpoint:    health:
+      # 显示具体信息      show-details: always
+      
 spring:  datasource:
     type: com.alibaba.druid.pool.DruidDataSource    druid:
       # 配置多数据源
@@ -81,7 +93,12 @@ spring:  datasource:
     # 连接超时时间（毫秒）
     timeout: 0
   cache:    ehcache:      config: 'classpath:ehcache.xml'
+        security:    user:      name: root
+      password: root
+      roles:      - ADMIN 
+  mail:    host: 
 
 logging:  level:
     com.n22.springboot: debug
-    org.mybatis.spring.mapper: debug
+    org.mybatis.spring.mapper: debug
+

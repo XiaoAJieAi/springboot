@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.n22.springboot.model.Student;
 import com.n22.springboot.service.db.StudentServiceDB;
 
+import springfox.documentation.annotations.ApiIgnore;
+
+@ApiIgnore
 @Controller
 public class StudentController {
 

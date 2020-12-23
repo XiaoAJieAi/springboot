@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.n22.springboot.config.Log;
 
+import springfox.documentation.annotations.ApiIgnore;
+
+@ApiIgnore
 @RestController
 public class TestController {
 

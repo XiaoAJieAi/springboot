@@ -1,6 +1,9 @@
 package com.n22.springboot.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import com.google.common.base.Predicates;
 
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -12,6 +15,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
+ * http://localhost/web/swagger-ui.html  访问地址
  * 在配置类中添加@EnableSwagger2注解来启用Swagger2，apis()定义了扫描的包路径。
  * Swagger常用注解
  * @Api:修饰整个类，描述Controller的作用；
@@ -33,10 +37,11 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerConfig {
 
+	@Bean
 	public Docket buildDocket() {
 		return new Docket(DocumentationType.SWAGGER_2).apiInfo(buildApiInf()).select()
 				.apis(RequestHandlerSelectors.basePackage("com.n22.springboot.controller"))
-				.paths(PathSelectors.any()).build();
+				.paths(Predicates.not(PathSelectors.regex("/error.*"))).build();
 	}
 
 	private ApiInfo buildApiInf() {
