@@ -96,7 +96,18 @@ spring:  datasource:
         security:    user:      name: root
       password: root
       roles:      - ADMIN 
-  mail:    host: 
+  mail:    host: smtp.126.com
+    # 邮箱账号
+    username: guoshijie_vip@126.com
+    # smtp服务得授权码
+    password: XZTQPPMBAQIRCFSR
+    properties:      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+            
 
 logging:  level:
     com.n22.springboot: debug
