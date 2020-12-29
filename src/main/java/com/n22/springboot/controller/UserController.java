@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.n22.springboot.exception.UserNotExistException;
 import com.n22.springboot.model.User;
 
 import io.swagger.annotations.Api;
@@ -32,7 +33,12 @@ public class UserController {
 	@GetMapping("/hello")
 	@ResponseBody
 	public String hello() {
-		return "hello";
+		return "hello spring boot !!!";
+	}
+	
+	@GetMapping("/test/{id}")
+	public void get(@PathVariable String id) {
+		throw new UserNotExistException(id);
 	}
 	
 	@ApiOperation(value = "获取用户信息",notes = "根据用户id获取用户信息")

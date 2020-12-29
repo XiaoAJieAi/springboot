@@ -2,10 +2,14 @@ package com.n22.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cache.annotation.EnableCaching;
+import org.springframework.boot.web.servlet.ServletComponentScan;
+
+
+
 
 // 注解开启缓存功能
 //@EnableCaching
+@ServletComponentScan
 @SpringBootApplication
 public class SpringbootApplication {
 
