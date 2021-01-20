@@ -38,7 +38,7 @@ public class TestSendEmailTests {
 
 		while (true) {
 			
-			Date min = format.parse("2021-01-22 07:59:55");
+			Date min = format.parse("2021-01-22 07:59:00");
 			Date max = format.parse("2021-01-22 08:05:00");
 			if(new Date().before(max) && new Date().after(min)) {
 				
